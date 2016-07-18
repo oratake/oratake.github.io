@@ -5,7 +5,8 @@
     <meta name="viewpoint" content="initial-scale=1.0">
     <title>test 01</title>
     <script>
-      window.addEventListener("devicemotion", function(event1) {
+      window.addEventListener('devicemotion', function(event1) {
+        // 重力加速度
         var x = event1.accelerationIncludingGravity.x;
         var y = event1.accelerationIncludingGravity.y;
         var z = event1.accelerationIncludingGravity.z;
@@ -17,12 +18,12 @@
           "Z:"+Math.round(z*10)/10;
       },true);
       
-      window.addEventListener('deviceorientation', function(event2) {
-        var alpha = event2.alpha;
-        var beta = event2.beta;
-        var gamma = event2.gamma;
+      window.addEventListener('deviceorientation', function(event3) {
+        var alpha = event3.alpha;
+        var beta = event3.beta;
+        var gamma = event3.gamma;
         
-        result2.innerHTML =
+        result3.innerHTML =
           "alpha:"+Math.round(alpha*10)/10+"<br>"+
           "beta:"+Math.round(beta*10)/10+"<br>"+
           "gamma:"+Math.round(gamma*10)/10;
@@ -30,7 +31,11 @@
     </script>
   </head>
   <body>
+    <h3>Gravity Acceleration</h3>
     <div id="result1"></div>
+    <h3>Gravity Acceleration</h3>
     <div id="result2"></div>
+    <h3>alpha</h3>
+    <div id="result3"></div>
   </body>
 </html>
