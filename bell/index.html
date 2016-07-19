@@ -7,12 +7,24 @@
     <script>
       window.addEventListener('devicemotion', function(event1) {
         // 重力加速度
-        var x = event1.accelerationIncludingGravity.x;
-        var y = event1.accelerationIncludingGravity.y;
-        var z = event1.accelerationIncludingGravity.z;
+        var gx = event1.accelerationIncludingGravity.gx;
+        var gy = event1.accelerationIncludingGravity.gy;
+        var gz = event1.accelerationIncludingGravity.gz;
         
         var result1 = document.getElementById("result1");
         result1.innerHTML =
+          "gX:"+Math.round(gx*10)/10+"<br>"+
+          "gY:"+Math.round(gy*10)/10+"<br>"+
+          "gZ:"+Math.round(gz*10)/10;
+      },true);
+      
+      window.addEventListener('devicemotion', function(event2) {
+        var x = event2.acceleration.x;
+        var y = event2.acceleration.y;
+        var z = event2.acceleration.z;
+        
+        var result2 = document.getElementById("result2");
+        result2.innerHTML =
           "X:"+Math.round(x*10)/10+"<br>"+
           "Y:"+Math.round(y*10)/10+"<br>"+
           "Z:"+Math.round(z*10)/10;
