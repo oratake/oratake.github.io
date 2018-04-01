@@ -1,30 +1,22 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!doctype html>
+<html>
+  <!-- 参考Page http://phiary.me/webaudio-api-getting-started -->
   <head>
-    <meta charset="utf-8">
-    <title>スマホハンドベル テスト</title>
-    <script>
-      $(document).ready(initialize);
-      // 端末の角度変化
-      function initialize() {
-        window.addEventListener('devicemotion', function(e) {
-          return furu(e);
-        }, true);
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    
+    <title>Web Audio API ベルためし</title>
+    <meta name="description" content="html5, webaudioapi, javascript" />
+    <style>
+      #btn {
+        font-size: 4rem;
+        padding: 1rem 2rem;
       }
-      // 振った挙動
-      function furu(e) {
-        var x = e.accelerationIncludingGravity.x;
-        var y = e.accelerationIncludingGravity.y;
-        var z = e.accelerationIncludingGravity.z;
-        // 一定値以上
-        if (Math.abs(x) > 15 || Math.abs(y) > 15 || Math.abs(z) > 15) {
-          alert("貴様、「振っている」な？")
-        }
-      }
-      
-    </script>
+    </style>
+    <script src='main.js'></script>
   </head>
   <body>
-    <h1>スマホハンドベル</h1>
+    <button id='btn'>Play</button>
   </body>
 </html>
