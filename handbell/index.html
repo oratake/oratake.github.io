@@ -10,14 +10,41 @@
         if (!HTMLAudioElement){
           return;
         }
+
         var audio = document.getElementById("audio");
 
-        ducument
-      })
+        ducument.getElementById("play").addEventListener("click", function(){
+          audio.play();
+        }, true);
+
+        document.getElementById("stop").addEventListener("click", function(){
+          audio.pause();
+        }, true);
+
+        document.getElementById("back").addEventListener("click", function(){
+          audio.currentTime=0;
+          audio.pause();
+        }, true);
+
+        document.getElementById("refrain").addEventListener("click", function(){
+          audio.pause();
+          audio.currentTime=0;
+          audio.play();
+        }, true);
+      }, true);
     </script>
   </head>
   <body>
-    
+    <audio id="audio" controls preload>
+      <source src="bell_c.mp3">
+      <p>HTML5 Audioがつかえません。</p>
+    </audio>
+    <div>
+      <input type="button" id="play" value="再生">
+      <input type="button" id="stop" value="停止">
+      <input type="button" id="back" value="戻る">
+      <input type="button" id="refrain" value="止まるんじゃねぇぞ">
+    </div>
     <p>https://dev.classmethod.jp/smartphone/mobile-html5/を参照</p>
   </body>
 </html>
