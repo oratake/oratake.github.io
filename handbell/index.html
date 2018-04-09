@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title>multi media</title>
     <script>
       window.addEventListener("load", function(){
@@ -35,8 +35,8 @@
     </script>
   </head>
   <body>
-    <audio id="audio" controls preload>
-      <source src="bell_c.mp3">
+    <audio id="audio" preload>
+      <source src="bell_c.mp3"> // srcが一つならaudioタグの中でもいいかも？
       <p>HTML5 Audioがつかえません。</p>
     </audio>
     <div>
@@ -45,6 +45,9 @@
       <input type="button" id="back" value="戻る">
       <input type="button" id="refrain" value="止まるんじゃねぇぞ">
     </div>
-    <p>https://dev.classmethod.jp/smartphone/mobile-html5/を参照</p>
+    <!--
+    参照場所
+    https://dev.classmethod.jp/smartphone/mobile-html5/
+    !-->
   </body>
 </html>
