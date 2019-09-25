@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex,follow">
-  <meta name="description" content="かけだしバックエンドエンジニア、竹中のポートフォリオ。WordPressのテーマづくり、HTML5,CSS3のページづくり修行中。">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="google-site-verification" content="RHZtwBEfHAKfnZBx9BSSFT4qP_6x3E-juuDWsHNpLEI" />
   <title>K.Takenaka Portfolio</title>
@@ -173,11 +172,7 @@
 <a id="profile"></a>
 <section class="my-5 p-4">
   <h2 class="text-center"><i class="fas fa-user mr-2"></i>Profile</h2>
-  <p>はじめまして、竹中恭介と申します。</p>
-  <p>
-    中学校教員として技術科、音楽科を受け持っていましたが、教えるよりも自分の技術でおまんまを食うことを選択しました。<br>
-    1年で教員を辞め、7ヶ月のニート生活の末にプログラマ職で採用を頂き、現在HTML/CSSのコーディング修行中です。
-  </p>
+  <p id="qiita_description">※ jQueryが読めませんでした。<a href="https://qiita.com/oratake/">こちらをご確認ください。</a></p>
 </section>
 
 <a id="skill"></a>
@@ -403,7 +398,29 @@
       $("html, body").animate({scrollTop:position}, speed, "swing");
       return false;
     });
-});
+  });
+
+  $(function(){
+    $('#qiita_description').text("データ取得中...");
+    $.ajax({
+      url:"https://qiita.com/api/v2/users/oratake",
+      type:"GET",
+      datatype:"json",
+      timespan:1000
+    }).done(function(data1, textStatus, jqXHR){
+      // data1: 通信で取得したデータ
+      // textStatus: 通信結果のステータス
+      // jqXHR: XMLHttpRequestオブジェクト
+      $('#qiita_description').text(data1["description"]);
+      console.dir(jqXHR);
+      console.dir(textStatus);
+      console.dir(data1);
+    }).fail(function(jqXHR, textStatus, errorThrown){
+      console.dir(jqXHR);
+      console.dir(textStatus);
+      console.dir(errorThrown);
+    }).always(console.log("Loading qiita description is done."));
+  });
 </script>
 </body>
 </html>
