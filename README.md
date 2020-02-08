@@ -18,6 +18,5 @@ Gitの学習も兼ねてgithub.ioで公開。
 参考: [未経験がWeb系転職成功したいならgithubでissue管理して開発しよう - Qiita](https://qiita.com/fukubaka0825/items/c7710b4e87d478c8ba3b)
 
 - 20.02.01  
-富山の前社を辞めた。  
 少し技術スタックが古くなってきているので、勉強中の技術を踏まえて更新していきたい。
 issueに追記。
